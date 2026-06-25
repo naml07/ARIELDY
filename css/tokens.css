@@ -1,0 +1,93 @@
+/* ============================================================
+   ARIELDY — Design Tokens
+   Premium Cocoa Brand · Design System Foundation
+   ============================================================ */
+
+:root {
+  /* ── Colors ─────────────────────────────────────────────── */
+  --c-obsidian:      #120A06;
+  --c-mahogany:      #2C1308;
+  --c-chocolate:     #3D1A0E;
+  --c-terracotta:    #7A2F14;
+  --c-amber:         #B5541A;
+  --c-gold:          #C8922A;
+  --c-gold-light:    #E2AF5A;
+  --c-gold-pale:     #F0D49A;
+  --c-cream:         #F7EDD8;
+  --c-parchment:     #EDE0C4;
+  --c-linen:         #FAF6EE;
+  --c-white:         #FFFFFF;
+
+  /* Text Colors */
+  --c-text-primary:  #1A0E08;
+  --c-text-secondary:#5C3D2E;
+  --c-text-muted:    #9A7260;
+  --c-text-inverse:  #F7EDD8;
+  --c-text-gold:     #C8922A;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-display:    'Cormorant Garamond', 'Georgia', serif;
+  --font-heading:    'Playfair Display', 'Georgia', serif;
+  --font-ui:         'Montserrat', 'Helvetica Neue', sans-serif;
+  --font-body:       'Lora', 'Georgia', serif;
+
+  /* ── Font Sizes (fluid, mobile-first clamp) ─────────────── */
+  --fs-xs:    clamp(0.70rem, 1.5vw, 0.75rem);
+  --fs-sm:    clamp(0.82rem, 1.8vw, 0.875rem);
+  --fs-base:  clamp(0.95rem, 2vw, 1rem);
+  --fs-md:    clamp(1.05rem, 2.2vw, 1.125rem);
+  --fs-lg:    clamp(1.15rem, 2.5vw, 1.25rem);
+  --fs-xl:    clamp(1.3rem, 3vw, 1.5rem);
+  --fs-2xl:   clamp(1.6rem, 4vw, 2rem);
+  --fs-3xl:   clamp(2rem, 5vw, 2.75rem);
+  --fs-4xl:   clamp(2.5rem, 6.5vw, 3.75rem);
+  --fs-5xl:   clamp(3rem, 8vw, 5rem);
+  --fs-6xl:   clamp(3.5rem, 10vw, 6.5rem);
+
+  /* ── Spacing ────────────────────────────────────────────── */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+  --sp-40: 10rem;
+
+  /* Section vertical padding */
+  --section-py: clamp(4rem, 8vw, 7rem);
+  --section-px: clamp(1.25rem, 5vw, 2rem);
+
+  /* ── Borders & Radius ───────────────────────────────────── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-sm:   0 2px 8px rgba(18, 10, 6, 0.08);
+  --shadow-md:   0 8px 24px rgba(18, 10, 6, 0.12);
+  --shadow-lg:   0 20px 48px rgba(18, 10, 6, 0.18);
+  --shadow-xl:   0 32px 80px rgba(18, 10, 6, 0.24);
+  --shadow-gold: 0 8px 32px rgba(200, 146, 42, 0.25);
+
+  /* ── Transitions ────────────────────────────────────────── */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:   200ms;
+  --t-base:   350ms;
+  --t-slow:   600ms;
+  --t-reveal: 800ms;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --max-w:     1280px;
+  --max-w-text: 720px;
+  --nav-h:     70px;
+}

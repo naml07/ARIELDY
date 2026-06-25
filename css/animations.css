@@ -1,0 +1,211 @@
+/* ============================================================
+   ARIELDY — Animations & Motion
+   ============================================================ */
+
+/* ── Scroll Reveal Base ─────────────────────────────────── */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--t-reveal) var(--ease-luxury),
+              transform var(--t-reveal) var(--ease-luxury);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="fade-left"] {
+  transform: translateX(-40px);
+}
+[data-reveal="fade-left"].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal="fade-right"] {
+  transform: translateX(40px);
+}
+[data-reveal="fade-right"].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.92);
+}
+[data-reveal="scale"].revealed {
+  transform: scale(1);
+}
+
+/* Stagger delays */
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+[data-delay="500"] { transition-delay: 500ms; }
+[data-delay="600"] { transition-delay: 600ms; }
+[data-delay="700"] { transition-delay: 700ms; }
+[data-delay="800"] { transition-delay: 800ms; }
+
+/* ── Hero Text Animation ────────────────────────────────── */
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: heroWordReveal 0.9s var(--ease-luxury) forwards;
+}
+
+@keyframes heroWordReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Shimmer on Gold ─────────────────────────────────────── */
+
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    var(--c-gold) 0%,
+    var(--c-gold-light) 40%,
+    var(--c-gold-pale) 60%,
+    var(--c-gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 0% center; }
+  to   { background-position: 200% center; }
+}
+
+/* ── Floating Particle ───────────────────────────────────── */
+
+.float-particle {
+  animation: floatY 6s ease-in-out infinite;
+}
+.float-particle:nth-child(2) { animation-delay: 2s; }
+.float-particle:nth-child(3) { animation-delay: 4s; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-16px); }
+}
+
+/* ── Pulse Glow ──────────────────────────────────────────── */
+
+.pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,146,42,0.4); }
+  50%       { box-shadow: 0 0 0 16px rgba(200,146,42,0); }
+}
+
+/* ── Page Load Curtain ───────────────────────────────────── */
+
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--c-obsidian);
+  z-index: 9999;
+  transform-origin: top;
+  animation: curtainReveal 0.9s var(--ease-luxury) 0.2s forwards;
+}
+
+@keyframes curtainReveal {
+  from { transform: scaleY(1); }
+  to   { transform: scaleY(0); }
+}
+
+/* ── Rotating Ring Loader ────────────────────────────────── */
+
+@keyframes ringRotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Counter Roll ────────────────────────────────────────── */
+
+.counter-wrap {
+  overflow: hidden;
+}
+
+/* ── Horizontal Scroll Marquee ───────────────────────────── */
+
+.marquee-track {
+  display: flex;
+  gap: var(--sp-12);
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+/* ── Hero scroll indicator ───────────────────────────────── */
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  animation: fadeInUp 1s var(--ease-luxury) 2s both;
+}
+
+.scroll-indicator__text {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(247,237,216,0.5);
+}
+
+.scroll-indicator__line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(247,237,216,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.5; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.2); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Image parallax wrapper ─────────────────────────────── */
+
+.parallax-img {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ── Gold line draw ─────────────────────────────────────── */
+
+.line-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.5s var(--ease-luxury);
+}
+.line-draw.revealed {
+  stroke-dashoffset: 0;
+}
