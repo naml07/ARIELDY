@@ -36,6 +36,16 @@ body {
 h1, h2, h3, h4, h5, h6, p, a, span, li, dt, dd {
   word-break: break-word;
   overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+li[style*="display:flex"], li[style*="display: flex"], ul[style*="display:flex"], ul[style*="display: flex"] {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+li[style*="display:flex"] > span:not(:first-child), li[style*="display: flex"] > span:not(:first-child) {
+  flex: 1;
+  min-width: 0;
 }
 
 img, video {

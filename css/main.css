@@ -1006,3 +1006,55 @@
   justify-content: center;
   font-size: 1.2rem;
 }
+
+/* ── MOBILE RESPONSIVE OVERRIDES (FIXES) ─────────────────── */
+@media (max-width: 768px) {
+  /* Fix 1: Hero actions vertically stacked & buttons constrained */
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix 2: Product image size constrained & centered */
+  .product-detail__img-wrap {
+    max-width: 280px;
+    max-height: 280px;
+    margin: 0 auto var(--sp-4) auto;
+    aspect-ratio: 1 / 1;
+  }
+  .product-detail__img {
+    object-fit: contain;
+    background: var(--c-parchment);
+  }
+  .product-thumbs {
+    justify-content: center;
+  }
+
+  /* Fix 3: Sticky bottom bar button readable & not covered by whatsapp float */
+  .sticky-product-cta {
+    padding: var(--sp-3) var(--sp-4);
+    flex-direction: column;
+    gap: var(--sp-2);
+    text-align: center;
+  }
+  .sticky-product-cta__text {
+    display: none;
+  }
+  .sticky-product-cta .btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.8rem;
+    padding: 0.7rem 1rem;
+    white-space: normal;
+  }
+  body:has(.sticky-product-cta.visible) .whatsapp-float {
+    display: none !important;
+  }
+}
