@@ -30,6 +30,17 @@
   transform: translateX(0);
 }
 
+@media (max-width: 900px) {
+  [data-reveal="fade-left"],
+  [data-reveal="fade-right"] {
+    transform: translateY(20px);
+  }
+  [data-reveal="fade-left"].revealed,
+  [data-reveal="fade-right"].revealed {
+    transform: translateY(0);
+  }
+}
+
 [data-reveal="scale"] {
   transform: scale(0.92);
 }

@@ -12,6 +12,9 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
+  overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -20,9 +23,19 @@ body {
   line-height: 1.7;
   color: var(--c-text-primary);
   background-color: var(--c-linen);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, li, dt, dd {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 img, video {
@@ -105,15 +118,21 @@ p {
   max-width: var(--max-w);
   margin-inline: auto;
   padding-inline: var(--section-px);
+  box-sizing: border-box;
 }
 
 .container--narrow {
+  width: 100%;
   max-width: var(--max-w-text);
   margin-inline: auto;
   padding-inline: var(--section-px);
+  box-sizing: border-box;
 }
 
 /* Section base */
+section, main, header, footer {
+  max-width: 100%;
+}
 section {
   padding-block: var(--section-py);
 }
